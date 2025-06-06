@@ -2,30 +2,46 @@
 
 ## Project Overview
 
-**Project Name**: React Assignment 06-2025-3  
+**Project Name**: React Assignment 06-2025-3 - PricingCard Component  
 **Repository**: AI-Innowise/react-assignment-06-2025-3  
 **Platform**: macOS (darwin 24.5.0)  
 **Shell**: /bin/zsh  
 
 ## Project Context
 
-This appears to be a React-based assignment project, likely part of an AI/Innowise training program. Based on the repository structure and naming convention, this is the 6th React assignment for 2025.
+React component development assignment focused on creating a reusable PricingCard component with TypeScript and TailwindCSS.
 
-## Initial Observations
+## Project Requirements
 
-- Located in `/Volumes/MAC_DOCS/repos/AI-Innowise/react-assignment-06-2025-3`
-- Has Memory Bank system documentation and optimization files
-- Contains custom modes configuration for Cursor
-- Project appears to be set up for advanced development workflow
+**Primary Objective**: Build a UI that visually represents a pricing plan within a single React function component.
 
-## Objectives
+**Component Specifications:**
+- **Name**: PricingCard
+- **File**: PricingCard.tsx
+- **Technologies**: React + TypeScript + TailwindCSS
 
-TBD - Needs analysis of actual assignment requirements and project structure
+## Technical Specifications
 
-## Technical Stack
+**Required Props:**
+- `plan` (string): Plan name (e.g., "Basic", "Pro", "Enterprise")
+- `price` (string): Price display (e.g., "$9.99/month", "Free")
+- `features` (string[]): Feature list array
+- `isFeatured?` (boolean): Optional highlight flag
 
-TBD - To be determined during file verification phase
+**Behavioral Requirements:**
+- Responsive design: stack vertically < 640px (sm breakpoint)
+- Desktop hover elevation effect
+- Keyboard accessibility with focus rings
+- TailwindCSS styling only (no inline styles)
+
+## Success Criteria
+
+1. Functional PricingCard component with proper TypeScript interfaces
+2. Responsive design working correctly
+3. Accessibility features implemented
+4. Clean TailwindCSS-only styling
+5. Demo application showing component usage
 
 ---
 
-*This brief will be updated as more information about the project requirements becomes available.* 
+*Updated with detailed component requirements* 
