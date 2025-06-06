@@ -16,73 +16,68 @@ const PricingCard: React.FC<PricingCardProps> = ({
   return (
     <div 
       className={`
-        relative rounded-lg border p-4 sm:p-6 shadow-sm transition-all duration-200
-        w-full max-w-sm mx-auto sm:max-w-none
+        relative rounded-lg p-8 min-h-[400px] flex flex-col cursor-pointer
+        transition-all duration-300 ease-in-out
+        transform md:hover:scale-105 md:hover:shadow-2xl md:hover:-translate-y-2
+        focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50
+        focus:scale-105 focus:shadow-2xl focus:-translate-y-2
+        active:scale-95 active:transition-transform active:duration-100
         ${isFeatured 
-          ? 'border-blue-500 bg-blue-50 ring-2 ring-blue-500' 
-          : 'border-gray-200 bg-white hover:shadow-lg'
+          ? 'bg-slate-700 text-white shadow-xl md:hover:shadow-blue-500/25' 
+          : 'bg-white text-gray-900 shadow-md md:hover:shadow-gray-500/25'
         }
-        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
       `}
       tabIndex={0}
       role="button"
-      aria-label={`${plan} pricing plan`}
+      aria-label={`${plan} pricing plan - ${price}`}
     >
-      {/* Featured badge */}
-      {isFeatured && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-            Most Popular
-          </span>
-        </div>
-      )}
-
       {/* Plan name */}
-      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 text-center sm:text-left">
+      <h3 className={`
+        text-lg font-medium mb-6 text-center transition-colors duration-300
+        ${isFeatured ? 'text-white' : 'text-gray-900'}
+      `}>
         {plan}
       </h3>
 
       {/* Price */}
-      <div className="mb-4 sm:mb-6 text-center sm:text-left">
-        <span className="text-2xl sm:text-3xl font-bold text-gray-900">
+      <div className="mb-8 text-center">
+        <span className={`
+          text-4xl font-bold transition-colors duration-300
+          ${isFeatured ? 'text-white' : 'text-gray-900'}
+        `}>
           {price}
         </span>
       </div>
 
       {/* Features list */}
-      <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+      <ul className="space-y-4 mb-8 flex-grow">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-start">
-            <svg 
-              className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" 
-              fill="currentColor" 
-              viewBox="0 0 20 20"
-              aria-hidden="true"
-            >
-              <path 
-                fillRule="evenodd" 
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
-                clipRule="evenodd" 
-              />
-            </svg>
-            <span className="text-sm sm:text-base text-gray-600">{feature}</span>
+          <li key={index} className="text-center">
+            <span className={`
+              text-sm transition-colors duration-300
+              ${isFeatured ? 'text-gray-200' : 'text-gray-600'}
+            `}>
+              {feature}
+            </span>
           </li>
         ))}
       </ul>
 
-      {/* CTA Button */}
+      {/* Subscribe Button */}
       <button 
         className={`
-          w-full py-2 sm:py-3 px-4 rounded-md font-medium transition-colors duration-200
-          text-sm sm:text-base
+          w-full py-3 px-6 rounded-md font-medium 
+          transition-all duration-300 ease-in-out
+          transform md:hover:scale-105 active:scale-95
+          focus:outline-none focus:ring-4 focus:ring-opacity-50
           ${isFeatured
-            ? 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500'
-            : 'bg-gray-900 text-white hover:bg-gray-800 focus:ring-gray-900'
+            ? 'bg-blue-600 text-white md:hover:bg-blue-700 md:hover:shadow-lg focus:ring-blue-400'
+            : 'bg-gray-900 text-white md:hover:bg-gray-800 md:hover:shadow-lg focus:ring-gray-600'
           }
-          focus:outline-none focus:ring-2 focus:ring-offset-2
         `}
+        aria-label={`Subscribe to ${plan} plan`}
       >
-        Get Started
+        SUBSCRIBE
       </button>
     </div>
   );

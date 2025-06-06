@@ -3,48 +3,42 @@ import PricingCard from './components/PricingCard'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
-          Pricing Plans
+    <div className="min-h-screen bg-gray-900 py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-3xl font-bold text-center text-white mb-16">
+          Pricing
         </h1>
         
-        {/* PricingCard components demonstration - responsive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        {/* PricingCard components matching the design */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <PricingCard
-            plan="Basic"
-            price="$9.99/month"
+            plan="Standard"
+            price="$100"
             features={[
-              "10 GB Storage",
-              "Email Support",
-              "Basic Analytics",
-              "1 User Account"
+              "50,000 Requests",
+              "4 contributors",
+              "Up to 3 GB storage space"
             ]}
           />
           
           <PricingCard
             plan="Pro"
-            price="$19.99/month"
+            price="$200"
             features={[
-              "100 GB Storage",
-              "Priority Support",
-              "Advanced Analytics",
-              "5 User Accounts",
-              "API Access"
+              "100,000 Requests",
+              "7 contributors",
+              "Up to 5 GB storage space"
             ]}
             isFeatured={true}
           />
           
           <PricingCard
-            plan="Enterprise"
-            price="$49.99/month"
+            plan="Expert"
+            price="$500"
             features={[
-              "Unlimited Storage",
-              "24/7 Phone Support",
-              "Custom Analytics",
-              "Unlimited Users",
-              "Full API Access",
-              "Custom Integrations"
+              "200,000 Requests",
+              "11 contributors",
+              "Up to 10 GB storage space"
             ]}
           />
         </div>
